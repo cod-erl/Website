@@ -7,17 +7,17 @@
             <thead >
                 <tr>
                     <th>#</th>
-                     <th>Image</th>
-                <th class="item">Item</th>
-                <th class="price">Quantity</th>
-                <th class="quantity">Price</th>
-                <th class="total">Total</th>
-                <th>Action</th>
+                    <th>Image</th>
+                    <th class="item">Item</th>
+                    <th class="price">Quantity</th>
+                    <th class="quantity">Price</th>
+                    <th class="total">Total</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody style='margin:0px; height:10px;'>
+            <tbody>
                 @forelse($carts as $key => $cart)
-                <tr style='margin:0px!important; padding: 2px;'>
+                <tr>
                     <td>{{$key +1}}</td>
                     <td><img src='{{asset($cart->product->filename)}}' width='75'></td>
                     <td class="item"> {{$cart->product->name}}
@@ -77,6 +77,4 @@
     </div>
     <div class="clearfix"></div>
 </div>
-            
-
 @endsection

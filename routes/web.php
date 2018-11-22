@@ -21,13 +21,6 @@
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin'],function(){
-    Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::group(['namespace' => 'Admin','middleware' => 'auth:admin'],function(){
-        Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    });
-});
 
 //User auth routes
 

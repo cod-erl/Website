@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 
+use \App\Admin;
+
+
+
 class AdminLoginController extends Controller
 {
     /**
@@ -18,7 +22,9 @@ class AdminLoginController extends Controller
     {
         return view('auth.admin-login');
     }
+
     protected function guard(){
+
         return Auth::guard('admin');
     }
     
