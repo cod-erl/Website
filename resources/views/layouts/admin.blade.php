@@ -60,34 +60,9 @@
 </head><!--/head-->
 <body>
     <header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +254 753 636 994</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> dairyyetu@mail.com</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
 		
 		<div class="header-middle"><!--header-middle-->
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-3">
 						<a class="navbar-brand" href="{{ url('/') }}">
@@ -97,94 +72,19 @@
                              <span class="navbar-toggler-icon"></span>
                         </button>
 					</div>
-					<div class="col-sm-9">
-						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav ml-auto">
-                                <!--authentication Links-->
-								 @guest
-                                <li><a href="{{ route('login') }}">Login</a></li>
-                                <li>
-									@if (Route::has('register'))
-									<a href="{{ route('register') }}">Register</a>
-									@endif
-								</li>
-                                @else
-                                
-								<li class="dropdown">
-									<a>
-										{{ Auth::user()->name }}<i class="fa fa-angle-down"></i>
-									</a>                                    
-                                        <ul role="menu" class="sub-menu">
-                                            <li><a href="{{route('forms.edit_profile',Auth::user()->id)}}">Update Profile</a>
-											</li>
-                                                
-                                            <li><a href="{{route('chat')}}">Message Admin</a></li> 
-                                            <li>
-                                                @if(Auth::user()->role->name === 'buyer')
-                                                    <a href="{{route('orders.all')}}">All Orders</a>
-                                                @endif
-                                            </li> 
-
-											<li>
-                                                @if(Auth::user()->role->name === 'seller')
-                                                    <a href="{{url('/products/create') }}">Upload Product</a>
-                                                @endif
-                                            </li> 
-                                                 
-											<li>
-                                                @if(Auth::user()->role->name === 'seller')
-										           <a href="{{url('/products')}}">Manage Products</a>
-										        @endif
-                                            </li>
-
-                                            <li>
-                                                    <a href="{{ route('logout') }}" 
-											            onclick="event.preventDefault();
-								                                document.getElementById('logout-form').submit();">
-											        Logout
-										            </a>
-								
-										            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-											        @csrf
-										            </form>
-                                            </li> 
-                                        </ul> 
-                                </li>                                               
-                            </ul> 
-                            <ul>
-								@if(Auth::user()->role->name === 'buyer')
-								<li>
-									<a href="/cart">Cart ({{$cartItems->count()}})</a>
-								</li>
-                                @endif
-                             @endguest
-                            </ul>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-middle-->
-	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
+					<div class="col-sm-3">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
+								<span class="icon-bar"> Tasks</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
 				</div>
 			</div>
-		</div><!--/header-bottom-->
+		</div><!--/header-middle-->
 	</header><!--/header-->
 
     <main class="py-4">
@@ -198,8 +98,8 @@
 					<div class="col-sm-12">
 						<div class="companyinfo text-center">
 							<h2>dairyYetu</h2>
-              <p>Your one stop solution for dairy products</p>
-              <p>|Copyright © 2018. All rights reserved.|</p>
+							<p>Your one stop solution for dairy products</p>
+							<p>|Copyright © 2018. All rights reserved.|</p>
 						</div>
 					</div>
 				</div>
