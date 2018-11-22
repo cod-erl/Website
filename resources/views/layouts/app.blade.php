@@ -99,7 +99,7 @@
 					</div>
 					<div class="col-sm-9">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav ml-auto">
+							<ul>
                                 <!--authentication Links-->
 								 @guest
                                 <li><a href="{{ route('login') }}">Login</a></li>

@@ -5,8 +5,10 @@ use  Yuansir\Toastr\Facades\Toastr;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Admin;
+use App\User;
 
-class AdminController extends Controller
+class AdminController extends Controller 
 {
 
     /**
@@ -24,22 +26,20 @@ class AdminController extends Controller
         return view('auth.admin-login');
     }
     
-    public function store()
+    public function Sellers()
     {
-        $input = request()->validate([
-                'name' => 'required',
-                'password' => 'required|min:5',
-                'email' => 'required|email|unique:users'
-            ], [
-                'name.required' => 'Name is required',
-                'password.required' => 'Password is required'
-            ]);
+        
+        return view('admin.sellers');
+    }
 
-        $input = request()->all();
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
+    public function Buyers()
+    {
+        return view('admin.buyers');
+    }
 
-        return back()->with('success', 'User created successfully.');
+    public function Products()
+    {
+        return view('admin.products');
     }
 }
 

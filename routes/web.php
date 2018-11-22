@@ -23,7 +23,11 @@ Auth::routes();
 Route::prefix('admin')->group(function(){
     Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::get('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');    
+    Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard'); 
+    Route::get('/manage/buyers', 'AdminController@Buyers')->name('manage.buyers');
+    Route::get('/manage/sellers', 'AdminController@Sellers')->name('manage.sellers');
+    Route::get('/manage/products', 'AdminController@Products')->name('manage.products');
+    Route::get('/chat', 'ChatController@index')->name('chat');   
 });
 
 
