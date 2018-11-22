@@ -26,6 +26,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');    
 });
 
+
 //User auth routes
 
 Auth::routes();
