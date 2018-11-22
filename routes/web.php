@@ -20,7 +20,11 @@
 //Admin auth routes
 
 Auth::routes();
-
+Route::prefix('admin')->group(function(){
+    Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::get('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');    
+});
 
 //User auth routes
 
