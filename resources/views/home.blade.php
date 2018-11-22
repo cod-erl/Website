@@ -22,7 +22,8 @@
 										<ul>
 											<li><a href="#">suna East </a></li>
 											<li><a href="#">Suna West</a></li>
-											<li><a href="#">Kimaiga </a></li>
+											<li><a href="#">Suna South </a></li>
+											<li><a href="#">Suna North </a></li>
 										</ul>
 									</div>
 								</div>
@@ -41,8 +42,8 @@
 										<ul>
 											<li><a href="#">Homabay East</a></li>
 											<li><a href="#">Homabay West</a></li>
-											<li><a href="#">Homabay central</a></li>
-											<li><a href="#">Sub Homabay</a></li>
+											<li><a href="#">Homabay North</a></li>
+											<li><a href="#">Homabay South</a></li>
 										</ul>
 									</div>
 								</div>
@@ -56,17 +57,6 @@
 											NAIROBI
 										</a>
 									</h4>
-								</div>
-								<div id="womens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Kasarani</a></li>
-											<li><a href="#">Embakasi East</a></li>
-											<li><a href="#">Temple Road</a></li>
-											<li><a href="#">Roysambu</a></li>
-											<li><a href="#">Westlands</a></li>
-										</ul>
-									</div>
 								</div>
 							</div>
 						</div><!--/category-products-->
