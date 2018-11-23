@@ -26,8 +26,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard'); 
     Route::get('/manage/buyers', 'AdminController@Buyers')->name('manage.buyers');
     Route::get('/manage/sellers', 'AdminController@Sellers')->name('manage.sellers');
-    Route::get('/manage/products', 'AdminController@Products')->name('manage.products');
-    Route::get('/chat', 'ChatController@index')->name('chat');   
+    Route::get('/manage/products', 'AdminController@Products')->name('manage.products'); 
 });
 
 
@@ -57,10 +56,6 @@ Route::group(['middleware' => 'auth', 'PreventBackHistory'],function(){
 Route::group(['middleware' => 'auth'],function(){
     Route::get('/edit_profile/{user_id}', 'UserController@edit')->name('forms.edit_profile');
     Route::post('/update_profile/{user_id}', 'UserController@update')->name('users.update');
-    //displaying the messages view
-    Route::get('/chat', 'ChatController@index')->name('chat');
-    Route::get('/message', 'MessageController@index')->name('message');
-    Route::post('/message', 'MessageController@store')->name('message.store');//store message in database
     
 }); 
 
@@ -84,11 +79,6 @@ Route::group(['middleware' => 'seller'],function(){
         Route::post('product', 'ProductController@store')->name('product.store');
      });
 
-
-/*
-Route::get('/cart', 'CartController')->name('cart');
-Route::delete('emptyCart', 'CartController@destroyAll');
-*/
 
 Route::get('/sms', function () {
     return view('SMS.index');

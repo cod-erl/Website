@@ -36,8 +36,7 @@ class AdminLoginController extends Controller
      */
     protected $redirectTo = '/admin/dashboard';
     /**
-     * Create a new controller instance.
-     *
+     * Create a new controller instance. 
      * @return void
      */
     public function __construct()

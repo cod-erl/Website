@@ -117,13 +117,7 @@
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="{{route('forms.edit_profile',Auth::user()->id)}}">Update Profile</a>
 											</li>
-                                                
-                                            <li><a href="{{route('chat')}}">Message Admin</a></li> 
-                                            <li>
-                                                @if(Auth::user()->role->name === 'buyer')
-                                                    <a href="{{route('orders.all')}}">All Orders</a>
-                                                @endif
-                                            </li> 
+                                                            
 
 											<li>
                                                 @if(Auth::user()->role->name === 'seller')
