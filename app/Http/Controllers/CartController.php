@@ -18,7 +18,7 @@ class CartController extends Controller
        $cart = Cart::where('user_id',Auth::user()->id)->where('checked',false)->first();
        if($cart){
            if($cart->product->user_id != $product->user_id){
-               Toastr::warning('Kindly order items from same seller', $title = 'Cart Error', $options = []);
+               Toastr::warning('Kindly order items from the same seller', $title = 'Cart Error', $options = []);
                 return redirect()->back();
            }
        }

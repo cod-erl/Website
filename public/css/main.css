@@ -1962,7 +1962,7 @@ h2.title {
 .pagination li a:hover,
 .pagination-area 
 .pagination li .active {
-  background:#FE980F;
+  background: #dfc12a;
   color: #fff
 }
 
@@ -1990,7 +1990,7 @@ h2.title {
 
 .pager-area 
 .pager li a:hover {
-  background: #FE980F;
+  background:  #dfc12a;
   color: #fff
 }
 
@@ -2028,7 +2028,7 @@ h2.title {
 .rating-area 
 .ratings .color, 
 .rating-area .color {
-  color: #FE980F
+  color:  #dfc12a;
 }
 
 
@@ -2117,7 +2117,7 @@ h2.title {
 
 .blog-socials ul li a:hover {
   color: #fff;
-  background:#FE980F
+  background: #dfc12a;
 }
 
 
@@ -2181,7 +2181,7 @@ h2.title {
 }
 
 .sinlge-post-meta li i {
-  background:#FE980F;
+  background: #dfc12a;
   color: #FFFFFF;
   margin-right: 10px;
   padding: 8px 10px;
@@ -2208,7 +2208,7 @@ h2.title {
 }
 
 .replay-box label {
-  background:#FE980F;
+  background: #dfc12a;
   color: #FFFFFF;
   margin-bottom: 15px;
   padding: 3px 15px;
@@ -2217,7 +2217,7 @@ h2.title {
 }
 
 .replay-box span {
-  color: #FE980F;
+  color:  #dfc12a;
   float: right;
   font-weight: 700;
   margin-top: 21px;
@@ -2234,7 +2234,7 @@ h2.title {
 
 .replay-box form input:hover, 
 .text-area textarea:hover {
-  border: 1px solid #FE980F;
+  border: 1px solid  #dfc12a;
 }
 
 .text-area {
@@ -2247,7 +2247,7 @@ h2.title {
 }
 
 .btn.btn-primary {
-  background:#FE980F;
+  background: #dfc12a;
   border: 0 none;
   border-radius: 0;
   margin-top: 16px;
@@ -2264,7 +2264,7 @@ h2.title {
   height: auto;
   border-style: solid;
   border-width: 8px;
-  border-color:#FE980F transparent transparent transparent;
+  border-color: #dfc12a transparent transparent transparent;
   top: 25px;
   left: 5px
 } 
@@ -2321,7 +2321,7 @@ h2.title {
 #contact-page .form-control:focus, 
 #contact-page .form-control:hover {
   box-shadow: inherit;
-  border-color: #FDB45E;
+  border-color:  #dfc12a;
 }
 
 #contact-page .contact-info {
@@ -2372,6 +2372,6 @@ h2.title {
 }
 
 .contact-info .social-networks ul li a:hover{
-  color: #FE980F;
+  color:  #dfc12a;
 }
 

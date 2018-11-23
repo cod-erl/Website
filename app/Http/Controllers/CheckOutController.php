@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  Yuansir\Toastr\Facades\Toastr;
+use AfricasTalking\SDK\AfricasTalking;
 use App\Cart;
 use App\Product;
 use Auth;
 use App\Order;
 use App\Transaction;
+use App\User;
 
 class CheckOutController extends Controller
 {
@@ -143,6 +145,22 @@ class CheckOutController extends Controller
                        $product->quantity = $quantity - $cart->quantity;
                        $product->save();
                    }
+
+                   //send message
+                    $username = 'sandbox'; 
+                    $apiKey   = '7cc40fbfb821f5a899b9d25be4e56a69a97b450d62982e37c16857b92b7b4248'; 
+                    $AT       = new AfricasTalking($username, $apiKey);
+                    $phone = $seller->telephone_no;
+                    // Get one of the services
+                    $sms      = $AT->sms();
+
+                    // Use the service
+                    $result   = $sms->send([
+                        'to'      => '+254'. $phone,
+                        'message' => 'Hello World!'
+                    ]);
+
+                    print_r($result);
                 }
                 $mpesa = new Transaction;
                 $mpesa->merchant_id = $result['Body']['stkCallback']['MerchantRequestID'];
