@@ -44,70 +44,75 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+
+	<style>
+	.sidenav {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: lightgrey;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: White;
+		display: block;
+		transition: 0.3s;
+	}
+
+	.sidenav a:hover {
+		color: #dfc12a;
+	}
+
+	.sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 25px;
+		margin-left: 50px;
+	}
+
+	#main {
+		transition: margin-left .5s;
+		padding: 16px;
+	}
+
+	@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+	}
+</style>
 </head><!--/head-->
 <body>
-    <header id="header"><!--header-->		
-		<div class="header-middle"><!--header-middle-->
-			<div class="container-fluid">
-				<div class="row" style="background-color:#dfc12a">
-					<div class="col-sm-3">
-						<a style="color:white"class="navbar-brand" href="{{ url('/admin/dashboard') }}">
-							{{ config('app.name', 'Laravel') }}
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                             <span class="navbar-toggler-icon"></span>
-                        </button>
-					</div>
-
-					<div class="col-sm-9">
-					<div class="row shop-menu pull-right">
-						<ul>
-							<li><a href="{{ route('logout') }}" 
-											onclick="event.preventDefault();
-								                    document.getElementById('logout-form').submit();">
-											Logout
-								</a>
-								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-								@csrf
-								</form>
-								</li>                                          
-                            </ul> 
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div><!--/header-middle-->
-	</header><!--/header-->
 
     <main class="py-4">
             @yield('content')
-        </main>
+    </main>
 
-    <footer id="footer"><!--Footer-->
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="companyinfo text-center">
-							<h2>dairyYetu</h2>
-							<p>Your one stop solution for dairy products</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-bottom" style="background-color:#dfc12a">
-			<div class="container">
-				<div class="row text-center">
-					<p>|Copyright © 2018. All rights reserved.|</p>
-				</div>
-			</div>
-		</div>
-</footer><!--/Footer-->
 {!! Toastr::render() !!}
   
 <!--scripts-->
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.scrollUp.min.js"></script>

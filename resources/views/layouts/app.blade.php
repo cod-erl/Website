@@ -172,12 +172,12 @@
 								<span class="icon-bar"></span>
 							</button>
 						</div>
-						<div class="mainmenu pull-left">
+						<div class="mainmenu pull-left" style="color:black">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{ url('home') }}">Home</a></li>
-								<li><a href="{{ url('/products/all') }}">Shop</a></li>
-								<li><a href="{{ url('about') }}">About</a></li>
-								<li><a href="{{ url('contact') }}">Contact Us</a></li>
+								<li><a href="{{ url('home') }}"><b>Home</b></a></li>
+								<li><a href="{{ url('/products/all') }}"><b>Shop</b></a></li>
+								<li><a href="{{ url('about') }}"><b>About</b></a></li>
+								<li><a href="{{ url('contact') }}"><b>Contact Us</b></a></li>
 							</ul>
 						</div>
 					</div>
@@ -223,8 +223,8 @@
 						<div class="single-widget">
 							<h2>Quick Shop</h2>
 							<ul>
-								<li><a href="#">Migori</a></li>
-								<li><a href="#">Homabay</a></li>
+								<li><a href="{{route('migori.items')}}">Migori</a></li>
+								<li><a href="{{route('homabay.items')}}">Homabay</a></li>
 							</ul>
 						</div>
 					</div>
@@ -257,8 +257,8 @@
 		
 		<div class="footer-bottom">
 			<div class="container">
-				<div class="row ">
-					<p class="text-center">|Copyright © 2018. All rights reserved.|</p>
+				<div class="row text-center">
+					<p>|Copyright © 2018. All rights reserved.|</p>
 				</div>
 			</div>
 		</div>

@@ -49,7 +49,7 @@
 																	<p><b>Location: </b>{{$product->location}}, {{$product->county}} county</p>
                                                                     <form action='{{route('cart.add',$product->id)}}' method='post'> 
                                                                     @csrf
-                                                                        <button type='submit' class="btn btn-sm">
+                                                                        <button type='submit' class="btn btn-sm" style="background-color: #dfc12a; color: white">
                                                                         <i class="fa fa-shopping-cart"></i>Add to cart</button>
                                                                     </form><br>
                                                             </div>

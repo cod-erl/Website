@@ -62,49 +62,22 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+										<a href="{{route('migori.items')}}">
 											Migori
 										</a>
 									</h4>
-								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">suna East </a></li>
-											<li><a href="#">Suna West</a></li>
-											<li><a href="#">Suna North </a></li>
-											<li><a href="#">Suna South </a></li>
-										</ul>
-									</div>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+										<a href="{{route('homabay.items')}}">
 											HOMABAY
 										</a>
 									</h4>
 								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Homabay East</a></li>
-											<li><a href="#">Homabay West</a></li>
-											<li><a href="#">Homabay North</a></li>
-											<li><a href="#">Homabay South</a></li>
-										</ul>
-									</div>
-								</div>
 							</div>
-							
-						</div><!--/category-products-->	
-						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
-                        </div><!--/shipping-->
+						</div>
                     </div>
                 </div>
                         
@@ -126,7 +99,7 @@
 																	<p><b>Location: </b>{{$product->location}}, {{$product->county}} county</p>
                                                                     <form action='{{route('cart.add',$product->id)}}' method='post'> 
                                                                     @csrf
-                                                                        <button type='submit' class="btn btn-success btn-sm">
+                                                                        <button type='submit' class="btn btn-sm" style="background-color: #dfc12a; color: white">
                                                                         <i class="fa fa-shopping-cart"></i>Add to cart</button>
                                                                     </form><br>
                                                             </div>
