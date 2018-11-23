@@ -49,9 +49,9 @@
     <header id="header"><!--header-->		
 		<div class="header-middle"><!--header-middle-->
 			<div class="container-fluid">
-				<div class="row" style="background-color:black">
+				<div class="row" style="background-color:#dfc12a">
 					<div class="col-sm-3">
-						<a style="color:white"class="navbar-brand" href="{{ url('/') }}">
+						<a style="color:white"class="navbar-brand" href="{{ url('/admin/dashboard') }}">
 							{{ config('app.name', 'Laravel') }}
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -97,7 +97,7 @@
 			</div>
 		</div>
 		
-		<div class="footer-bottom">
+		<div class="footer-bottom" style="background-color:#dfc12a">
 			<div class="container">
 				<div class="row text-center">
 					<p>|Copyright © 2018. All rights reserved.|</p>

@@ -20,6 +20,26 @@
     </thead>
     <tbody>
       
+      @foreach($products as $product)
+    
+      <tr>
+        <td>{{$product['id']}}</td>
+        <td>{{$product['name']}}</td>
+        <td>{{$product['quantity']}}</td>
+        <td>{{$product['price']}}</td>
+        <td><span class='label {{$product->status == true ? 'label-success' : 'label-danger'}}'>{{$product->status == true ? 'In Stock' : 'Out of Stock'}}</span></td>
+        <td> {{\Carbon\Carbon::parse($product->created_at)->format('M j, Y')}}
+        <td>
+          <div class='col-md-6'>
+            <form action="{{route('adminproducts.destroy', $product['id'])}}" method="post">
+              @csrf
+              @method('delete')
+              <button class="btn btn-danger btn-sm " type="submit">Delete</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      @endforeach
     </tbody>
   </table>
   </div>

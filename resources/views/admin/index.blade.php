@@ -15,23 +15,17 @@
                           <span>Mails</span>
                       </a>
                   </li>
-                  <li class="sub-menu">
-                      <a href="{{route('chat')}}" >
-                          <i class="glyphicon glyphicon-inbox"></i>
-                          <span>Chats</span>
-                      </a>
-                  </li>
 
                   <li class="sub-menu">
                       <a href="{{route('manage.sellers') }}" >
-                          <i class="fa fa-desktop"></i>
+                          <i class="fas fa-user"></i>
                           <span>Sellers</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
                       <a href="{{route('manage.buyers')}}" >
-                          <i class="fa fa-cogs"></i>
+                          <i class="fas fa-user"></i>
                           <span>Buyers</span>
                       </a>
                   </li>

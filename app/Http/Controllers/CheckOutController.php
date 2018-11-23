@@ -151,13 +151,14 @@ class CheckOutController extends Controller
                     $apiKey   = '7cc40fbfb821f5a899b9d25be4e56a69a97b450d62982e37c16857b92b7b4248'; 
                     $AT       = new AfricasTalking($username, $apiKey);
                     $phone = $seller->telephone_no;
+                    
                     // Get one of the services
                     $sms      = $AT->sms();
 
                     // Use the service
                     $result   = $sms->send([
                         'to'      => '+254'. $phone,
-                        'message' => 'Hello World!'
+                        'message' => 'your products {{}} have been ordered. Proceed with deievery ASAP!!'
                     ]);
 
                     print_r($result);

@@ -32,13 +32,6 @@
         <td>
           <div class='col-md-6'><a href="{{route('products.edit', $product->id)}}" class="btn-sm btn btn-warning">Edit</a>
           </div>
-          <div class='col-md-6'>
-            <form action="{{route('products.destroy', $product['id'])}}" method="post">
-              @csrf
-              @method('delete')
-              <button class="btn btn-danger btn-sm " type="submit">Delete</button>
-            </form>
-          </div>
         </td>
       </tr>
       @endforeach

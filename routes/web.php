@@ -27,6 +27,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/manage/buyers', 'AdminController@Buyers')->name('manage.buyers');
     Route::get('/manage/sellers', 'AdminController@Sellers')->name('manage.sellers');
     Route::get('/manage/products', 'AdminController@Products')->name('manage.products'); 
+    Route::any('/manage/sellers/destroy/{$id}', 'AdminController@destroy')->name('user.destroy');
+    Route::any('/manage/buyers/destroy/{$id}', 'AdminController@destroy')->name('user.destroy');
+    Route::any('/manage/products/product/{$id}', 'AdminController@destroyProduct')->name('adminproducts.destroy');
 });
 
 
