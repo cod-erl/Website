@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-    <p class="text-center" style="font-size:28pt">Our Story</p>
+    <p class="text-center" style="font-size:20pt; color:black">Our Story</p>
 
 </div>
 
 <div class="container">
-    <p>DairyYetu is an application that allows customers to order dairy 
+    <p style="color:black">DairyYetu is an application that allows customers to order dairy 
         products at the comfort of their homes and work places. The system 
         also allows sellers the convenience of supplying products to customers 
         who are located within their locality. Notably, the world has come to a 

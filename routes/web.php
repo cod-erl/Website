@@ -41,6 +41,8 @@ Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('/', 'PagesController@index')->name('default');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/products/all', 'PagesController@products');
+Route::get('/Homabay/Items', 'PagesController@homabay')->name('homabay.items');
+Route::get('/Migori/Items', 'PagesController@migori')->name('migori.items');
 
 
 //Contact routes

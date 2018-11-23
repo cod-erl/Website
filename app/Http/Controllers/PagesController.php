@@ -24,4 +24,16 @@ class PagesController extends Controller
         return view('home',get_defined_vars());
         
     }
+
+    public function homabay()
+    {
+        $products = Product::wherestatus(true)->whereCounty('Homabay')->orderByDesc('created_at')->paginate(12);
+        return view('County.Homabay',get_defined_vars());
+    }
+
+    public function migori()
+    {
+        $products = Product::wherestatus(true)->whereCounty('Migori')->orderByDesc('created_at')->paginate(12);
+        return view('County.Migori',get_defined_vars());
+    }
 }

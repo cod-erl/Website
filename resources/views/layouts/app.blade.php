@@ -145,7 +145,7 @@
                                         </ul> 
                                 </li>                                               
                             </ul> 
-                            <ul>
+                           	<ul>
 								@if(Auth::user()->role->name === 'buyer')
 								<li>
 									<a href="/cart">Cart ({{$cartItems->count()}})</a>
@@ -180,9 +180,6 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -226,7 +223,6 @@
 							<ul>
 								<li><a href="#">Migori</a></li>
 								<li><a href="#">Homabay</a></li>
-								<li><a href="#">Nairobi</a></li>
 							</ul>
 						</div>
 					</div>

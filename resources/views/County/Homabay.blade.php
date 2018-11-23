@@ -11,7 +11,8 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="{{route('migori.items')}}">
+										<li class="dropdown">
+										<a  href="{{route('migori.items')}}">
 											Migori
 										</a>
 									</h4>
@@ -20,23 +21,19 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="{{route('homabay.items')}}">
+										<a  href="{{route('homabay.items')}}">
 											HOMABAY
 										</a>
 									</h4>
 								</div>
 							</div>
 						</div><!--/category-products-->
-						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
-                        </div><!--/shipping-->
                     </div>
                 </div>
                         
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Products</h2>
+                        <h2 class="title text-center">Products|Homabay</h2>
                             @foreach ($products->chunk(12) as $items)
                             <div class="row">
                                 @foreach ($items as $product)
@@ -52,7 +49,7 @@
 																	<p><b>Location: </b>{{$product->location}}, {{$product->county}} county</p>
                                                                     <form action='{{route('cart.add',$product->id)}}' method='post'> 
                                                                     @csrf
-                                                                        <button type='submit' class="btn btn-success btn-sm">
+                                                                        <button type='submit' class="btn btn-sm">
                                                                         <i class="fa fa-shopping-cart"></i>Add to cart</button>
                                                                     </form><br>
                                                             </div>
