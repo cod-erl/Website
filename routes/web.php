@@ -56,12 +56,6 @@ Route::get('contact', 'ContactController@create')->name('contact.create');
 //setting the home page to prevent backhistory after log out
 Route::group(['middleware' => 'auth', 'PreventBackHistory'],function(){
     Route::get('/home', 'HomeController@index')->name('home');
-});
-
-Route::group(['middleware' => 'auth'],function(){
-    Route::get('/edit_profile/{user_id}', 'UserController@edit')->name('forms.edit_profile');
-    Route::post('/update_profile/{user_id}', 'UserController@update')->name('users.update');
-    
 }); 
 
     
@@ -75,7 +69,7 @@ Route::group(['middleware' => 'buyer'],function(){
     Route::post('/order', 'CheckOutController@makeOrder')->name('order');
     Route::any('/order/repay{order}', 'CheckOutController@repayOrder')->name('order.repay');
     Route::get('/orders/all', 'OrderController@orders')->name('orders.all');
-    Route::delete('/orders/destroy/{order}', 'CheckOutController@removeOrder')->name('orders.destroy');
+    Route::delete('/orders/destroy/{order}', 'CheckOutController@removeOrder')->name('order.destroy');
 });
     
 

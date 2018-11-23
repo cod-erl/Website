@@ -2,16 +2,17 @@
 
 @section('content')
 <div class="container">
-    <div class=" row">
         <table class='table table-responsive table-stripped'>
             <thead >
                 <tr>
                     <th>#</th>
                     <th>Image</th>
-                    <th class="item">Item</th>
-                    <th class="price">Quantity</th>
-                    <th class="quantity">Price</th>
-                    <th class="total">Total</th>
+                    <th>Item</th>
+                    <th></th>
+                    <th>Quantity</th>
+                    <th></th>
+                    <th>Price</th>
+                    <th>Total</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -20,9 +21,9 @@
                 <tr>
                     <td>{{$key +1}}</td>
                     <td><img src='{{asset($cart->product->filename)}}' width='75'></td>
-                    <td class="item"> {{$cart->product->name}}
+                    <td > {{$cart->product->name}}
                     </td>
-                    <td class="quantity">
+                    <td>
                         <div class='col-md-12'>
                             <div class='col-md-3'>
                                 <form method='post' action='{{route('cart.remove',$cart->id)}}'>
@@ -31,20 +32,18 @@
                                     <button type='submit' class='' ><i class='fa fa-minus text-warning'></i></button>
                                 </form> 
                             </div>
-                            <div class='col-md-6'>
-                                {{$cart->quantity}}
-                            </div>
-                            <div class='col-md-3'>
-                                <form method='post' action='{{route('cart.add',$cart->product->id)}}'>
-                                    @csrf 
-                                    <button type='submit' class='' ><i class='fa fa-plus text-success'></i></button>
-                                </form>
-                            </div>
-                        </div> 
                     </td>
-                    <td class="price"> {{$cart->product->price}}
+                    <td>
+                        {{$cart->quantity}}
                     </td>
-                    <td class="total">{{$cart->quantity * $cart->product->price}}</td>
+                    <td>
+                        <form method='post' action='{{route('cart.add',$cart->product->id)}}'>
+                            @csrf 
+                            <button type='submit' class='' ><i class='fa fa-plus text-success'></i></button>
+                        </form> 
+                    </td>
+                    <td> {{$cart->product->price}}</td>
+                    <td>{{$cart->quantity * $cart->product->price}}</td>
                     <td>
                         <form method='post' action='{{route('cart.delete',$cart->id)}}'>
                             @csrf 
@@ -68,13 +67,12 @@
         </table>
          <div class=col-md-12>
              <div class=col-md-6>
-                <a href="{{ url('products/all') }}" class="btn btn-info btn-sm pull-left " role="button">Continue Shopping</a>
+                <a href="{{ url('products/all') }}" class="btn btn-sm pull-left " style="background-color: #dfc12a; color: white" role="button">Continue Shopping</a>
             </div>
             <div class=col-md-6>
-                <a href="{{ url('checkout') }}" class="btn btn-info btn-sm pull-right" role="button">Proceed to Checkout</a>
+                <a href="{{ url('checkout') }}" class="btn btn-sm pull-right" style="background-color: #dfc12a; color: white" role="button">Proceed to Checkout</a>
             </div>
         </div>
     </div>
-    <div class="clearfix"></div>
-</div>
+<div class="clearfix"></div>
 @endsection

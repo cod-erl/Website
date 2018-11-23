@@ -115,9 +115,7 @@
 										{{ Auth::user()->name }}<i class="fa fa-angle-down"></i>
 									</a>                                    
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="{{route('forms.edit_profile',Auth::user()->id)}}">Update Profile</a>
-											</li>
-                                                            
+                                                                                                     
 
 											<li>
                                                 @if(Auth::user()->role->name === 'seller')
@@ -129,7 +127,11 @@
                                                 @if(Auth::user()->role->name === 'seller')
 										           <a href="{{url('/products')}}">Manage Products</a>
 										        @endif
-                                            </li>
+											</li>
+
+											<li>
+												<a href="{{url('/orders/all') }}">Manage Orders</a>
+											</li>
 
                                             <li>
                                                     <a href="{{ route('logout') }}" 
