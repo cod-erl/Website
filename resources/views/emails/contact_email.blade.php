@@ -17,8 +17,8 @@
 
                 <div class="container mail_body">
                     <p>Sender: {{$contact['name']}}</p>
-                   <p>Sender: {{$contact['email']}}</p>
-                   <p>Sender: {{$contact['message']}}</p>
+                    <p>Email: {{$contact['email']}}</p>
+                    <p>Message: {{$contact['message']}}</p>
                 </div>
             </div>
         </div>
