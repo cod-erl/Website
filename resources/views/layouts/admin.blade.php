@@ -44,54 +44,80 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
-
+	
+	<!--styles-->
 	<style>
-	.sidenav {
-		height: 100%;
-		width: 0;
-		position: fixed;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		background-color: lightgrey;
-		overflow-x: hidden;
-		transition: 0.5s;
-		padding-top: 60px;
-	}
+		.sidenav {
+			height: 100%;
+			width: 150px;
+			position: fixed;
+			z-index: 1;
+			top: 6;
+			bottom:20;
+			left: 0;
+			background-color: #dfc12a;
+			overflow-x: hidden;
+			padding-top: 20px;
+		}
 
-	.sidenav a {
-		padding: 8px 8px 8px 32px;
-		text-decoration: none;
-		font-size: 25px;
-		color: White;
-		display: block;
-		transition: 0.3s;
-	}
+		.sidenav a {
+			padding: 6px 8px 6px 16px;
+			text-decoration: none;
+			font-size: 12px;
+			color: white;
+			display: block;
+		}
 
-	.sidenav a:hover {
-		color: #dfc12a;
-	}
+		.sidenav a:hover {
+			color: black;
+		}
 
-	.sidenav .closebtn {
-		position: absolute;
-		top: 0;
-		right: 25px;
-		font-size: 25px;
-		margin-left: 50px;
-	}
-
-	#main {
-		transition: margin-left .5s;
-		padding: 16px;
-	}
-
-	@media screen and (max-height: 450px) {
-	.sidenav {padding-top: 15px;}
-	.sidenav a {font-size: 18px;}
-	}
-</style>
+		@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 12px;}
+		}
+		</style>
 </head><!--/head-->
 <body>
+    <header id="header"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container-fluid">
+				<div class="row" style="background:#dfc12a; padding:20px 20px">
+					<div class="col-sm-3">
+						<a class="navbar-brand" style="color:white" href="{{ url('/admin/dashboard') }}">
+							{{ config('app.name', 'Laravel') }}
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                             <span class="navbar-toggler-icon"></span>
+                        </button>
+					</div>
+					<div class="col-sm-9">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav ml-auto">                            
+								<li class="dropdown">
+									<a style="background:#dfc12a">
+										name <i class="fa fa-angle-down"></i>
+									</a>                                    
+                                        <ul role="menu" class="sub-menu">                                                                        
+                                            <li>
+                                                <a href="{{ route('logout') }}" 
+											        onclick="event.preventDefault();
+								                            document.getElementById('logout-form').submit();">
+											    Logout
+										        </a>
+													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													@csrf
+													</form>
+                                            </li> 
+                                        </ul> 
+                                </li>                                               
+                            </ul> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	</header><!--/header-->
 
     <main class="py-4">
             @yield('content')
@@ -100,19 +126,6 @@
 {!! Toastr::render() !!}
   
 <!--scripts-->
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-}
-</script>
-
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.scrollUp.min.js"></script>

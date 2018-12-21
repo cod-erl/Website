@@ -28,7 +28,6 @@ class ContactController extends Controller
         // dd($request);
 
         $contact=[];
-
         $contact['name'] = $request->name;
         $contact['email'] = $request->email;
         $contact['message'] = $request->message;
@@ -41,3 +40,4 @@ class ContactController extends Controller
     }
 
 }
+

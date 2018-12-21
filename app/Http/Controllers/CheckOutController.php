@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  Yuansir\Toastr\Facades\Toastr;
+
 use AfricasTalking\SDK\AfricasTalking;
 use App\Cart;
 use App\Product;
@@ -14,6 +15,7 @@ use App\User;
 
 class CheckOutController extends Controller
 {
+                   
     public function checkoutPage()
     {
 
@@ -149,17 +151,23 @@ class CheckOutController extends Controller
                    //send message
                     $username = 'sandbox'; 
                     $apiKey   = '7cc40fbfb821f5a899b9d25be4e56a69a97b450d62982e37c16857b92b7b4248'; 
-                    $AT       = new AfricasTalking($username, $apiKey);
+                    $from = '';
+                    $AT       = new AfricasTalking($username, $apiKey, $from);
                     $phone = $seller->telephone_no;
                     
                     // Get one of the services
                     $sms      = $AT->sms();
 
                     // Use the service
-                    $result   = $sms->send([
+                    foreach ($carts as $key =>$cart){
+                        $result   = $sms->send([
                         'to'      => '+254'. $phone,
-                        'message' => 'your products {{}} have been ordered. Proceed with deievery ASAP!!'
-                    ]);
+                        'from'   => $this->$from,
+                        'message' => 'Your products {{$cart->product->name}}, of the 
+                        quantity {{$cart->quantity}} has been  been ordered. Proceed with delivery ASAP!!'
+                        ]);
+                    }
+                    
 
                     print_r($result);
                 }

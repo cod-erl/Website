@@ -20,9 +20,11 @@
 //Admin auth routes
 
 Auth::routes();
+
+Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::get('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+
 Route::prefix('admin')->group(function(){
-    Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::get('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard'); 
     Route::get('/manage/buyers', 'AdminController@Buyers')->name('manage.buyers');
     Route::get('/manage/sellers', 'AdminController@Sellers')->name('manage.sellers');
@@ -46,6 +48,7 @@ Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/products/all', 'PagesController@products');
 Route::get('/Homabay/Items', 'PagesController@homabay')->name('homabay.items');
 Route::get('/Migori/Items', 'PagesController@migori')->name('migori.items');
+Route::post('/send', 'EmailController@send');
 
 
 //Contact routes

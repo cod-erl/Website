@@ -10,7 +10,6 @@
 						<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
-							<li data-target="#slider-carousel" data-slide-to="2"></li>
 						</ol>
 						
 						<div class="carousel-inner responsive" >
@@ -18,22 +17,18 @@
 								<div class="container">
 									<h1 style="color:black">dairyYetu</h1>
 									<h2>Your one stop solution for dairy products</h2>
-									<button type="button" class="btn btn-default shop">Shop...</button>
+									<a href="{{url('/products/all') }}">
+									<button type="submit" class="btn btn-primary shop">Shop...</button>
+									</a>
 								</div>
 							</div>
 							<div class="item" style="background-image: url(images/design/master-slide-02.jpg);">
 								<div class="container">
 									<h1 style="color:black">dairyYetu</h1>
-									<h2>Don't let your home run short of dairy products</h2>
-									<button type="button" class="btn btn-default shop">Shop...</button>
-								</div>
-							</div>
-							
-							<div class="item" style="background-image: url(images/design/master-slide-03.jpg); img-responsive">
-								<div class="container">
-									<h1 stye="color:black">dairyYetu</h1>
-									<h2>Are you a die-hard of healthy living?</h2>
-									<button type="button" class="btn btn-default shop">Shop</button>
+									<h2>Don't let your home run short of dairy</h2>
+									<a href="{{url('/products/all') }}">
+									<button type="submit" class="btn btn-primary shop">Shop...</button>
+									</a>
 								</div>
 							</div>
 							

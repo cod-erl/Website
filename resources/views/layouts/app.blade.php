@@ -200,65 +200,9 @@
 						<div class="companyinfo text-center">
 							<h2>dairyYetu</h2>
 							<p>Your one stop solution for dairy products</p>
+							<p>|Copyright © 2018. All rights reserved.|</p>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-widget">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="single-widget">
-							<h2>Services</h2>
-							<ul>
-								<li><a href="{{ url('contact') }}">Contact Us</a></li>
-								<li><a href="#">Order Status</a></li>
-								<li><a href="#">FAQ’s</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="single-widget">
-							<h2>Quick Shop</h2>
-							<ul>
-								<li><a href="{{route('migori.items')}}">Migori</a></li>
-								<li><a href="{{route('homabay.items')}}">Homabay</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="single-widget">
-							<h2>Policies</h2>
-							<ul>
-								<li><a href="#">Terms of Use</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Refund Policy</a></li>
-								<li><a href="#">Billing System</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="single-widget">
-							<h2>About dairYetu</h2>
-							<ul>
-								<li><a href="{{url('about') }}">Company Information</a></li>
-								<li><a href="#">Carers</a></li>
-								<li><a href="#">Affillate Program</a></li>
-								<li><a href="#">Copyright</a></li>
-							</ul>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row text-center">
-					<p>|Copyright © 2018. All rights reserved.|</p>
 				</div>
 			</div>
 		</div>
