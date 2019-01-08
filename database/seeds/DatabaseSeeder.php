@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
             array(
             'name' => 'seller',
             ),
+            array(
+            'name' => 'Admin'
+            ),
         ));
 
         DB::table('counties')->insert(array(

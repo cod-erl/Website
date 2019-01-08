@@ -15,7 +15,8 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('role_id');
+            $table->integer('role_id')->unsigned()->nullable();
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
@@ -23,7 +24,6 @@ class CreateAdminsTable extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

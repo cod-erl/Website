@@ -19,6 +19,7 @@ class CreateCartsTable extends Migration
             $table->unsignedInteger('product_id')->index();
             $table->integer('quantity');
             $table->boolean('checked')->default(false);
+            $table->unsignedInteger('order_id')->index()->nullable();
             $table->timestamps();
         });
     }

@@ -18,8 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('quantity');
             $table->float('price');
-            $table->string('filename')->nullable();
             $table->unsignedInteger('user_id')->nullable()->index();
+            $table->string('location')->nullable();
+            $table->string('county')->nullable();
+            $table->string('user_name')->nullable();
+            $table->string('filename')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });
