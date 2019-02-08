@@ -16,6 +16,6 @@ class Cart extends Model
 
     public function product()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsToMany(Product::class);
     }
 }

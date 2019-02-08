@@ -21,7 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique()->nullable(); 
             $table->integer('telephone_no')->nullable();
             $table->string('county')->nullable();
+            $table->integer('county_id')->unsigned()->nullable();
+            $table->foreign('county_id')->references('id')->on('counties');
             $table->string('location')->nullable();
+            $table->integer('location_id')->unsigned()->nullable();
+            $table->foreign('location_id')->references('id')->on('locations');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

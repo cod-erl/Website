@@ -85,7 +85,7 @@ class usercontroller extends Controller
         $user->name=$request->name;
         $user->username=$request->post('username');
         $user->county=$request->post('county');
-         $user->location=$request->post('location');
+        $user->location=$request->post('location');
         $user->save();
 
         return redirect()->route('products.index')->with('success', 'Details have been updated');
